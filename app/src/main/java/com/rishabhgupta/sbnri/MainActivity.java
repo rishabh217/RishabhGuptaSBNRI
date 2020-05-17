@@ -21,14 +21,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerview;
-    private DataViewModel dataViewModel;
     private DataAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerview = (RecyclerView)findViewById(R.id.rv_data);
-        dataViewModel= ViewModelProviders.of(this).get(DataViewModel.class);
+        DataViewModel dataViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
         dataViewModel.getMutableLiveData().observe(this, new Observer<ArrayList<DataViewModel>>() {
             @Override
             public void onChanged(ArrayList<DataViewModel> myListViewModels) {

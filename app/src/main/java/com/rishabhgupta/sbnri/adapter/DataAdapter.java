@@ -45,13 +45,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return arrayList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
         private DataBinding dataBinding;
-        public ViewHolder(@NonNull DataBinding dataBinding) {
+        ViewHolder(@NonNull DataBinding dataBinding) {
             super(dataBinding.getRoot());
             this.dataBinding = dataBinding;
         }
-        public void bind(DataViewModel data){
+        void bind(DataViewModel data){
             this.dataBinding.setDataModel(data);
             dataBinding.executePendingBindings();
         }

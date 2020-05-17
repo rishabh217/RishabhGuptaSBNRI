@@ -18,7 +18,7 @@ public class DataViewModel extends ViewModel {
     public String open_issues_count = "";
     public String name = "";
     public String description = "";
-    public MutableLiveData<ArrayList<DataViewModel>>mutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<DataViewModel>>mutableLiveData = new MutableLiveData<>();
     private ArrayList<DataViewModel>arrayList;
     private ArrayList<Data> dataList;
 
@@ -26,7 +26,7 @@ public class DataViewModel extends ViewModel {
 
     }
 
-    public DataViewModel(Data data){
+    private DataViewModel(Data data){
         this.open_issues_count = data.open_issues_count;
         this.name = data.name;
         this.description =data.description;
